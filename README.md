@@ -4,8 +4,7 @@
 
 ---
 
-<!-- DEMO_VIDEO_LINK -->
-[![Demo](https://img.shields.io/badge/▶_Watch_Demo-blue?style=for-the-badge)](https://github.com/sidd1507/youtube-mixtape-generator/releases/tag/v1.0)
+[![Demo](https://img.shields.io/badge/▶_Watch_Demo-blue?style=for-the-badge)](https://github.com/Sidd-1507/youtube-mixtape-generator/releases/download/v1.0/project-demo.mp4)
 
 ---
 
