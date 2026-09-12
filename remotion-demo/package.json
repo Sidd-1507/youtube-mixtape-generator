@@ -1,0 +1,29 @@
+{
+  "name": "remotion-demo",
+  "version": "1.0.0",
+  "description": "YouTube Mixtape Generator — Remotion demo video",
+  "main": "index.js",
+  "scripts": {
+    "studio": "npx remotion studio src/index.tsx",
+    "render": "npx remotion render src/index.tsx MixtapeDemo out/mixtape-demo.mp4 --concurrency=4",
+    "preview": "npx remotion render src/index.tsx MixtapeDemo out/preview.mp4 --frames=0-60 --concurrency=4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/cli": "4.0.523",
+    "@remotion/media-utils": "4.0.523",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.523",
+    "typescript": "7.0.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0"
+  }
+}

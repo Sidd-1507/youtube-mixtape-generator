@@ -1,0 +1,7 @@
+node_modules/
+out/
+public/merged.mp3
+public/*.mp4
+public/*.mp3
+public/upload_raw.png
+public/desc_raw.png

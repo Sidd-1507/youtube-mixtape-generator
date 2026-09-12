@@ -1,0 +1,62 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ── uv / virtual environments ─────────────────────────────────────────────────
+.venv/
+.env
+*.env
+
+# ── Runtime storage — NEVER commit user-uploaded or generated files ───────────
+backend/storage/
+
+# ── Generated media — too large for git, hosted separately ───────────────────
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.mp3
+# Allow the tiny sample MP3s and background JPEG in sample_assets/
+!sample_assets/*.mp3
+!sample_assets/*.jpg
+
+# ── Remotion build artifacts ──────────────────────────────────────────────────
+remotion-demo/node_modules/
+remotion-demo/out/
+remotion-demo/public/merged.mp3
+remotion-demo/public/*.mp4
+remotion-demo/public/*.mp3
+
+# ── React frontend build ──────────────────────────────────────────────────────
+frontend-react/node_modules/
+frontend-react/dist/
+
+# ── Pipeline / demo scripts output ────────────────────────────────────────────
+public/
+scripts/
+
+# ── OS / editors ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ── Test / coverage ───────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+*.log
+.python-version
+
+# Demo video — distributed via GitHub Release
+demo/

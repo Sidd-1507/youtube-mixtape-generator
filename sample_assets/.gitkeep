@@ -1,0 +1,8 @@
+# sample_assets/
+# 
+# Place 3-4 short MP3 files here for testing the audio engine without the API.
+# Also add a background JPEG (bg.jpg or cover.jpg) for video engine testing.
+#
+# Suggested: download royalty-free tracks from freemusicarchive.org or bensound.com
+#
+# This .gitkeep file keeps the folder tracked in git even when empty.

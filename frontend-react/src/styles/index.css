@@ -1,0 +1,114 @@
+/* ─── Global design tokens + custom utilities ────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { font-family: 'Inter', system-ui, sans-serif; }
+
+  body {
+    @apply bg-zinc-950 text-zinc-100 antialiased;
+    background-image: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(124,58,237,0.12) 0%, transparent 70%);
+    min-height: 100vh;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-zinc-700 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-zinc-600; }
+}
+
+@layer components {
+  /* Card variants */
+  .card {
+    @apply bg-zinc-900/80 border border-zinc-800 rounded-2xl;
+    backdrop-filter: blur(8px);
+  }
+  .card-sm { @apply bg-zinc-900/80 border border-zinc-800 rounded-xl; }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-violet-600 hover:bg-violet-500 active:bg-violet-700
+           text-white font-semibold px-5 py-2.5 rounded-xl
+           transition-all duration-150 select-none
+           disabled:opacity-40 disabled:cursor-not-allowed disabled:pointer-events-none;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+           text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800
+           font-medium px-4 py-2 rounded-xl
+           transition-all duration-150 select-none;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           border border-zinc-700 hover:border-zinc-500
+           text-zinc-300 hover:text-white
+           font-medium px-5 py-2.5 rounded-xl
+           transition-all duration-150 select-none
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  /* Input / textarea */
+  .field {
+    @apply bg-zinc-800/60 border border-zinc-700 rounded-xl
+           text-zinc-100 placeholder:text-zinc-500
+           focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500
+           transition-colors duration-150;
+  }
+
+  /* Drag-over highlight */
+  .dropzone-active { @apply border-violet-500 bg-violet-500/5; }
+
+  /* Track item — used in both upload list and reorder list */
+  .track-row {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl
+           bg-zinc-800/60 border border-zinc-800
+           hover:border-zinc-700 transition-colors duration-150;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md
+           text-xs font-medium tabular-nums;
+  }
+  .badge-violet { @apply badge bg-violet-500/15 text-violet-300; }
+  .badge-zinc   { @apply badge bg-zinc-700/60 text-zinc-400; }
+}
+
+@layer utilities {
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+  }
+
+  /* Animate shimmer (loading skeleton) */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .skeleton {
+    background: linear-gradient(90deg, #27272a 25%, #3f3f46 50%, #27272a 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s ease-in-out infinite;
+    @apply rounded-lg;
+  }
+
+  /* Spin animation for loader */
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .animate-spin { animation: spin 0.7s linear infinite; }
+
+  /* Pulse dot (recording / active indicator) */
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.85); }
+  }
+  .pulse-dot { animation: pulse-dot 1.4s ease-in-out infinite; }
+}
